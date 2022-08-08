@@ -18,7 +18,7 @@ namespace Application.Activities
         {
             public CommandValidator()
             {
-                RuleFor(x => x.Activity).SetValidator(new ActivityValidator());
+                RuleFor(x => x.Activity).SetValidator(new ActivityValidator()!);
             }
         }
         public class Handler : IRequestHandler<Command, Result<Unit>>
@@ -35,7 +35,7 @@ namespace Application.Activities
             {
                 var activity = await _Context.Activities!.FindAsync(request.Activity!.Id);
 
-                if (activity == null) return null;
+                if (activity == null) return null!;
 
                 _mapper.Map(request.Activity, activity);
 
