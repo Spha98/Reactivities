@@ -50,4 +50,7 @@ export default class UserStore{
         history.push('/activities');
         store.modalStore.closeModal();
     }
+    setImage = (image: string) =>{
+        if (this.user) this.user.image = image;
+    }
 }
