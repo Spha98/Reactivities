@@ -14,7 +14,7 @@ import ActivityListItemPlaceholder from "./ActivityListItemPlaceholder";
 export default observer( function ActivityDashboard()
 {
     const {activityStore} = useStore();
-    const {loadActivities, ActivityRegistry,setPagingParams,pagination} = activityStore;
+    const {loadActivities, activityRegistry,setPagingParams,pagination} = activityStore;
     const [loadingNext, setLoadingNext] = useState(false);
 
     function handleGetNext (){
@@ -24,9 +24,9 @@ export default observer( function ActivityDashboard()
     }
 
     useEffect(() => {
-        if (ActivityRegistry.size === 0) loadActivities();
+        if (activityRegistry.size === 0) loadActivities();
 
-    }, [ActivityRegistry.size, loadActivities]);
+    }, [activityRegistry.size, loadActivities]);
 
 
     return(

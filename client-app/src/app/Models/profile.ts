@@ -11,19 +11,18 @@ export interface Profile{
     photos?: Photo[];
 }
 
-export class Profile implements Profile{
-    constructor(user: User){
+export class Profile implements Profile {
+    constructor(user: User) {
         this.username = user.username;
         this.displayName = user.displayName;
         this.image = user.image;
     }
 }
 
-export interface Photo{
-    id: String;
+export interface Photo {
+    id: string;
     url: string;
     isMain: boolean;
-
 }
 
 export interface UserActivity {
